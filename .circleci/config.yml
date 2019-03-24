@@ -57,7 +57,10 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_USER@zheng.shilinlee.com "cd /root/wxbot; git pull; python3 -m cron_jobs.cron_job"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@zheng.shilinlee.com
+            cd /root/wxbot
+            git pull
+            docker-compose up --build
 
 workflows:
   version: 2

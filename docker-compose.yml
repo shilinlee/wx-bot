@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  wxbot:
+#    container_name: Jane  # 项目名称_服务名称_序号
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - .:/root/wxbot
+#    command: gunicorn -c gun.conf.py WebServer.main:app
